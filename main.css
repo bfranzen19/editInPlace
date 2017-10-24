@@ -19,3 +19,8 @@ textarea {
 .hover {
   background-color: lightCyan;
 }
+
+.note {
+  font-family: monospace;
+  font-style: italic;
+}
