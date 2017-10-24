@@ -1,7 +1,21 @@
-p.hover {
-  font-size: 24px
+div {
+  margin: 20px 0;
+  text-align: center;
 }
 
-.editHover {
-  background-color: lightYellow;
+h1 {
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  font-family: monospace;
+}
+
+.editMe {
+  font-family: sans-serif;
+}
+
+.hover {
+  background-color: lightCyan;
 }
