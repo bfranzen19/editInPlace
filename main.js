@@ -1,29 +1,18 @@
 $(document).ready(function(){
-  $('.editMe').hover(function() {
-    $(this).addClass('hover');
-  }, function() {
-    $(this).removeClass('hover');
-  });
 
-  function divClicked() {
-    var divHtml = $(this).html();
-    var editableText = $("<textarea />");
-    editableText.val(divHtml);
-    $(this).replaceWith(editableText);
-    editableText.focus();
-    editableText.blur(editableTextBlurred);
-  }
+  $('.editMe').on('click', function(event) {
+    $(event.target).addClass('hidden')
+    var theInp = $(event.target).siblings()[0]
+    $(theInp).val($(event.target).text())
+    $(theInp).removeClass('hidden')
+    $(theInp).trigger('focus')
+  })
 
-  function editableTextBlurred() {
-    var html = $(this).val();
-    var viewableText = $("<div>");
-    viewableText.html(html);
-    $(this).replaceWith(viewableText);
-    viewableText.click(divClicked);
-  }
-
-  $(document).ready(function() {
-      $("div").click(divClicked);
+  $('.editMe').on('blur', function(event) {
+    $(event.target).addClass('hidden')
+    var theP = $(event.target).siblings()[0]
+    $(theP).text($(event.target).val())
+    $(theP).removeClass('hidden')
   })
 
 })
